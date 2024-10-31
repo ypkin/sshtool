@@ -48,7 +48,7 @@ case $choice in
         curl -sS -O https://kejilion.pro/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh
         ;;
     4)
-        curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && bash reinstall.sh
+        curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh && chmod +x  reinstall.sh && ./reinstall.sh
         ;;
     5)
         bash <(curl https://raw.githubusercontent.com/xykt/Utilities/main/nezha/ipv6flag.sh)
