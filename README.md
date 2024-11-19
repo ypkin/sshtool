@@ -1,5 +1,5 @@
 # sshtool
 常用脚本
 ```
-wget -O ssh.sh https://raw.githubusercontent.com/ypkin/sshtool/refs/heads/main/ssh.sh && chmod +x ssh.sh && ./ssh.sh
+apt update -y && apt install -y curl socat wget nano && wget -O ssh.sh https://raw.githubusercontent.com/ypkin/sshtool/refs/heads/main/ssh.sh && chmod +x ssh.sh && ./ssh.sh
 ```
