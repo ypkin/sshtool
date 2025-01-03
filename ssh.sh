@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 设置颜色
 PINK='\033[0;35m'   # 粉红色
 GREEN='\033[0;32m'  # 绿色
@@ -21,7 +20,9 @@ function show_main_menu {
     echo -e "${PINK}12.${RESET} ${GREEN}甲骨文保活${RESET}\n"
     echo -e "${PINK}13.${RESET} ${GREEN}WARP${RESET}\n"
     echo -e "${PINK}14.${RESET} ${GREEN}VPS回程测试${RESET}\n"
-    echo -e "${PINK}15.${RESET} ${GREEN}退出脚本${RESET}\n"
+    echo -e "${PINK}15.${RESET} ${GREEN}DNS解锁工具${RESET}\n"
+    echo -e "${PINK}16.${RESET} ${GREEN}Fail2ban安装与卸载${RESET}\n"
+    echo -e "${PINK}17.${RESET} ${GREEN}退出脚本${RESET}\n"
 }
 
 # 显示WARP二级菜单
@@ -31,9 +32,15 @@ function show_warp_menu {
     echo -e "${PINK}3.${RESET} ${GREEN}YGKKK WARP脚本${RESET}\n"
 }
 
+# 显示Fail2ban二级菜单
+function show_fail2ban_menu {
+    echo -e "${PINK}1.${RESET} ${GREEN}安装 Fail2ban${RESET}\n"
+    echo -e "${PINK}2.${RESET} ${GREEN}卸载 Fail2ban${RESET}\n"
+}
+
 # 主菜单
 show_main_menu
-echo -e "请输入你想执行的命令序号（1-15）："
+echo -e "请输入你想执行的命令序号（1-17）："
 read choice
 
 # 执行相应的命令
@@ -98,11 +105,31 @@ case $choice in
         wget -N --no-check-certificate https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh && chmod +x AutoTrace.sh && bash AutoTrace.sh
         ;;
     15)
+        wget https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh && bash dns-unlock.sh
+        ;;
+    16)
+        # Fail2ban 二级菜单
+        show_fail2ban_menu
+        echo -e "请输入你想执行的Fail2ban命令序号（1-2）："
+        read fail2ban_choice
+        case $fail2ban_choice in
+            1)
+                wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
+                ;;
+            2)
+                wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh && bash uninstall.sh
+                ;;
+            *)
+                echo "无效的Fail2ban选项，退出脚本。"
+                ;;
+        esac
+        ;;
+    17)
         echo "退出脚本。"
         exit 0
         ;;
     *)
-        echo "无效的序号，请输入 1 到 15 之间的数字。"
+        echo "无效的序号，请输入 1 到 17 之间的数字。"
         ;;
 esac
 
