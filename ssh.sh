@@ -20,7 +20,7 @@ function show_main_menu {
     echo -e "${PINK}12.${RESET} ${GREEN}甲骨文保活${RESET}\n"
     echo -e "${PINK}13.${RESET} ${GREEN}WARP${RESET}\n"
     echo -e "${PINK}14.${RESET} ${GREEN}VPS回程测试${RESET}\n"
-    echo -e "${PINK}15.${RESET} ${GREEN}DNS解锁工具${RESET}\n"
+    echo -e "${PINK}15.${RESET} ${GREEN}一键修改解锁DNS（Alice）${RESET}\n"
     echo -e "${PINK}16.${RESET} ${GREEN}Fail2ban安装与卸载${RESET}\n"
     echo -e "${PINK}17.${RESET} ${GREEN}退出脚本${RESET}\n"
 }
